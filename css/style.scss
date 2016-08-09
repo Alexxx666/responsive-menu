@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+%clearfix {
+    &:before,
+    &:after {
+        content: '';
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin tablet($tablet-width) {
+  @media (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+nav {
+    font-family: Helvetica;
+    text-align: left;
+    text-transform: uppercase;  
+    background-color: #222;
+    
+    ul {
+        width: 90%;
+        max-width: 1024px;
+        margin: 0 auto;
+        list-style-type: none;
+        
+        @include tablet(760px) {
+            width: 100%;
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        li {
+            display: inline-block;
+            
+            @include tablet(760px) {
+                display: block;
+            }
+            
+            a {
+                color: #9d9d9d;
+                font-weight: bold;
+                text-decoration: none;
+                display: inline-block;
+                padding: 1em;
+                box-sizing: border-box;
+                
+                &:hover {
+                    color: white;
+                }
+                
+                @include tablet(760px) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    
+    .current_page {
+        background-color: black;
+        
+        a {
+            color: white;
+        }
+    }
+    
+}
+
+#menu_button_wrapper{
+    @extend %clearfix;
+    display: none;
+    
+    @include tablet(760px) {
+        display: block;
+        padding: 1em;
+        color: #9d9d9d;
+        border-bottom: 1px solid #101010;
+        -webkit-box-shadow: 0 1px 0 rgba(255,255,255,.1);
+        box-shadow: 0 1px 0 rgba(255,255,255,.1);
+        margin-bottom: .5em;
+    }
+    
+    #menu_button {
+        box-sizing: border-box;
+        float: left;
+        padding: .5em 1em;
+        border: 1px solid #333;
+        border-radius: 5px;
+        color: white;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        
+        &:hover {
+            cursor: pointer;
+            background-color: #333;
+        }
+    }
+    
+    #menu_text{
+        display: inline-block;
+        line-height: 1;
+        float: left;
+    }
+
+    #hamburger {
+        float: right;
+        
+        span {
+            display: block;
+            background-color: #fff;
+            width: 1.2em;
+            height: .166666em;
+            border-radius: 1px;
+            margin: .125em 0;
+            
+            &:first-child {
+                margin-top: 0.0625em;
+            }
+            
+            &:last-child {
+                margin-bottom: 0.1875em;
+            }
+        }
+    }
+}
