@@ -4,7 +4,7 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <title>Responsive menu</title>
     
@@ -13,24 +13,69 @@
 
 <body>
 
-    <nav>
-        <div id="menu_button_wrapper">
-            <div id="menu_button">
-                <span id="menu_text">Menu&nbsp;&nbsp;</span>
-                <div id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
+    <nav class="menu">
+        <div class="menu_buttonWrapper">
+            <span class="menu_button" tabindex="1">
+                <span class="menu_text">
+                    Menu
+                </span>
+                <svg
+                     xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 124 124"
+                     class="menu_hamburger"
+                     aria-labelledby="menuIconTitle menuIconDesc"
+                     role="img"
+                >
+                    <title id="menuIconTitle">Navigation menu icon</title>
+                    <desc id="menuIconDesc">Three stacked horizontal lines</desc>
+                    <g>
+                        <path d="M112 6H12C5.4 6 0 11.4 0 18s5.4 12 12 12h100c6.6 0 12-5.4 12-12s-5.4-12-12-12zM112 50H12C5.4 50 0 55.4 0 62s5.4 12 12 12h100c6.6 0 12-5.4 12-12s-5.4-12-12-12zM112 94H12c-6.6 0-12 5.4-12 12s5.4 12 12 12h100c6.6 0 12-5.4 12-12s-5.4-12-12-12z"/>
+                    </g>
+                </svg>
+            </span>
         </div>
         
-        <ul id="menu_list">
-            <li class="current_page"><a href="#">Home</a></li>
-            <li><a href="#">Audio</a></li>
-            <li><a href="#">Video</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contacts</a></li>
+        <ul class="menu_items">
+            <li class="menu_item menu_item-current">
+                <a
+                   class="menu_link menu_link-current"
+                   href="#"
+                >
+                    Home
+                </a>
+            </li>
+            <li class="menu_item">
+                <a
+                   class="menu_link"
+                   href="#"
+                >
+                    Audio
+                </a>
+            </li>
+            <li class="menu_item">
+                <a
+                   class="menu_link"
+                   href="#"
+                >
+                    Video
+                </a>
+            </li>
+            <li class="menu_item">
+                <a
+                   class="menu_link"
+                   href="#"
+                >
+                    About Us
+                </a>
+            </li>
+            <li class="menu_item">
+                <a
+                   class="menu_link"
+                   href="#"
+                >
+                    Contacts
+                </a>
+            </li>
         </ul>
     </nav>
     
